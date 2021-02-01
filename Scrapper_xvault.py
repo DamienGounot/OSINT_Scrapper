@@ -9,9 +9,10 @@ def main(argv):
 	ip = []
 	browser = webdriver.Firefox()
 	website = 'http://vxvault.net'
-	r = browser.get(website)
-	for r in browser.find_element_by_css_selector('td'):
-    	print(r)
+	data = browser.get(website)
+	for data in browser.find_elements_by_class_name(".TD"):
+		print(data.text)
+
 
 if __name__ == "__main__":
 	main(sys.argv)
